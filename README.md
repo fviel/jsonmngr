@@ -9,3 +9,6 @@ curl -X POST http://localhost:8080/persons \
       "name":"Fernando",
       "age":44
     }'
+
+## GET example
+curl http://localhost:8080/persons
