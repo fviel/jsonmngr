@@ -15,20 +15,20 @@ import com.fviel.jsonmngr.FinEvents.model.Account;
 @RequestMapping("/finevents")
 public class FinEventsController {
     
-    private final FinEventsService personService;
+    private final FinEventsService finEventsService;
 
-    public FinEventsController(FinEventsService personService){
-        this.personService = personService;
+    public FinEventsController(FinEventsService finEventsService){
+        this.finEventsService = finEventsService;
     }
 
     @GetMapping
     public List<Account> list(){
-        return personService.list();
+        return finEventsService.list();
     }
 
     @PostMapping
     public Account create(@RequestBody Account account){
-        return personService.save(account);
+        return finEventsService.save(account);
     }
 
 }

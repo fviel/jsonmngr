@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fviel.jsonmngr.FinEvents.model.Account;
-import com.fviel.jsonmngr.Person.model.Person;
 
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
@@ -18,9 +17,9 @@ public class FinEventsService {
     private static final String FILE = "events.json";
     private final ObjectMapper mapper = new ObjectMapper();
 
-
     /**
      * List all existing accounts
+     * 
      * @return
      */
     public List<Account> list() {
@@ -32,18 +31,21 @@ public class FinEventsService {
             return mapper.readValue(file, new TypeReference<List<Account>>() {
             });
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
+
         }
     }
 
-    public Account save(Account account){
+    public Account save(Account account) {
         List<Account> accounts = list();
         long newId = accounts.stream()
-        .mapToLong(a -> a.id())
-        .max()
-        .orElse(0L) + 1;
+                .mapToLong(a -> a.id())
+                .max()
+                .orElse(0L) + 1;
 
-        Account newAccount = new Account(newId, account.ownnerName(), account.initialValue(), account.coin(), account.events());
+        Account newAccount = new Account(newId, account.ownnerName(), account.initialValue(), account.coin(),
+                account.events());
 
         accounts.add(newAccount);
 
@@ -52,11 +54,11 @@ public class FinEventsService {
         return newAccount;
     }
 
-    public void persistFile(List<Account> accounts){
-        try{
+    public void persistFile(List<Account> accounts) {
+        try {
             mapper.writerWithDefaultPrettyPrinter().writeValue(new File(FILE), accounts);
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
-        }        
+        }
     }
 }
