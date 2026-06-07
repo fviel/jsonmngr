@@ -1,0 +1,66 @@
+{
+  "conta": {
+    "id": 12345,
+    "titular": "Fernando Viel",
+    "saldoInicial": 5000.00,
+    "moeda": "BRL"
+  },
+  "eventos": [
+    {
+      "id": 1,
+      "data": "2026-06-01T08:30:00",
+      "tipo": "CREDITO",
+      "categoria": "SALARIO",
+      "descricao": "Recebimento de salário",
+      "valor": 8500.00
+    },
+    {
+      "id": 2,
+      "data": "2026-06-02T14:15:00",
+      "tipo": "DEBITO",
+      "categoria": "MORADIA",
+      "descricao": "Pagamento de aluguel",
+      "valor": 1800.00
+    },
+    {
+      "id": 3,
+      "data": "2026-06-03T10:45:00",
+      "tipo": "DEBITO",
+      "categoria": "SUPERMERCADO",
+      "descricao": "Compras no mercado",
+      "valor": 325.90
+    },
+    {
+      "id": 4,
+      "data": "2026-06-04T09:20:00",
+      "tipo": "CREDITO",
+      "categoria": "REEMBOLSO",
+      "descricao": "Reembolso de despesas",
+      "valor": 150.00
+    },
+    {
+      "id": 5,
+      "data": "2026-06-05T19:10:00",
+      "tipo": "DEBITO",
+      "categoria": "TRANSPORTE",
+      "descricao": "Abastecimento do veículo",
+      "valor": 280.50
+    },
+    {
+      "id": 6,
+      "data": "2026-06-06T12:00:00",
+      "tipo": "DEBITO",
+      "categoria": "LAZER",
+      "descricao": "Cinema e alimentação",
+      "valor": 95.00
+    },
+    {
+      "id": 7,
+      "data": "2026-06-07T16:30:00",
+      "tipo": "CREDITO",
+      "categoria": "INVESTIMENTOS",
+      "descricao": "Rendimento de aplicação",
+      "valor": 42.75
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-package com.fviel.jsonmngr.controller;
+package com.fviel.jsonmngr.FinEvents.controller;
 
 import java.util.List;
 
@@ -8,27 +8,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fviel.jsonmngr.model.Person;
-import com.fviel.jsonmngr.service.PersonService;
+import com.fviel.jsonmngr.FinEvents.service.FinEventsService;
+import com.fviel.jsonmngr.FinEvents.model.Account;
 
 @RestController
-@RequestMapping("/persons")
-public class PersonController {
+@RequestMapping("/finevents")
+public class FinEventsController {
     
-    private final PersonService personService;
+    private final FinEventsService personService;
 
-    public PersonController(PersonService personService){
+    public FinEventsController(FinEventsService personService){
         this.personService = personService;
     }
 
     @GetMapping
-    public List<Person> list(){
+    public List<Account> list(){
         return personService.list();
     }
 
     @PostMapping
-    public Person create(@RequestBody Person person){
-        return personService.save(person);
+    public Account create(@RequestBody Account account){
+        return personService.save(account);
     }
 
 }

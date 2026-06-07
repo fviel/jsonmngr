@@ -1,4 +1,4 @@
-package com.fviel.jsonmngr.service;
+package com.fviel.jsonmngr.Person.service;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.fviel.jsonmngr.model.Person;
+import com.fviel.jsonmngr.Person.model.Person;
 
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;

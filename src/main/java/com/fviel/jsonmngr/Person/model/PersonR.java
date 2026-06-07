@@ -1,4 +1,4 @@
-package com.fviel.jsonmngr.model;
+package com.fviel.jsonmngr.Person.model;
 
 public record PersonR(
     String name,
